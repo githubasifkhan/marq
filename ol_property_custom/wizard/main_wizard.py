@@ -23,15 +23,46 @@ class CreatBuilding(models.TransientModel):
         for i in range(no):
 
             if obj:
-                self.env['property.building'].create({
-                    'project_id':active_id,
-                        'code': obj_project.code+"-"+f'{len(obj.ids)+1+i:02}'
+                
+                idd = self.env['account.analytic.account'].create({
+                    'name': obj_project.code+"-"+f'{len(obj.ids)+1+i:02}'
+                        
                 })
+                sid = self.env['property.building'].create({
+                    'project_id':active_id,
+                        'code': obj_project.code+"-"+f'{len(obj.ids)+1+i:02}',
+                        'building_account_analytical':idd.id
+                })
+                s = self.env['account.analytic.account'].search([('name','=',obj_project.code+"-"+f'{len(obj.ids)+1+i:02}')])
+                s.write({
+                    'building_id':sid.id
+                 })
+                
+
+                
+                
+                
+
             else:
-                self.env['property.building'].create({
-                    'project_id':active_id,
-                        'code': obj_project.code+"-"+f'{i+1:02}'
+                
+                idd = self.env['account.analytic.account'].create({
+                    'name': obj_project.code+"-"+f'{i+1:02}'
+                        
                 })
+                sid=self.env['property.building'].create({
+                    'project_id':active_id,
+                        'code': obj_project.code+"-"+f'{i+1:02}',
+                        'building_account_analytical': idd.id
+                })
+                s = self.env['account.analytic.account'].search([('name','=',obj_project.code+"-"+f'{i+1:02}')])
+                s.write({
+                    'building_id':sid.id
+                 })
+                
+                
+                
+                
+                
         
         
 
@@ -51,15 +82,35 @@ class CreatFloor(models.TransientModel):
         for i in range(no):
 
             if obj:
-                self.env['property.floor'].create({
-                    'building_id':active_id,
-                    'code': obj_project.code+"-"+f'{len(obj.ids)+1+i:02}'
+                idd = self.env['account.analytic.account'].create({
+                    'name': obj_project.code+"-"+f'{len(obj.ids)+1+i:02}'
+                        
                 })
+                sid = self.env['property.floor'].create({
+                    'building_id':active_id,
+                    'code': obj_project.code+"-"+f'{len(obj.ids)+1+i:02}',
+                    'floor_analytic_account':idd.id
+                })
+                s = self.env['account.analytic.account'].search([('name','=',obj_project.code+"-"+f'{len(obj.ids)+1+i:02}')])
+                s.write({
+                    'floor_id':sid.id
+                 })
+                
             else:
-                self.env['property.floor'].create({
-                    'building_id':active_id,
-                        'code': obj_project.code+"-"+f'{i+1:02}'
+                idd=self.env['account.analytic.account'].create({
+                    'name': obj_project.code+"-"+f'{i+1:02}'
+                        
                 })
+                sid = self.env['property.floor'].create({
+                    'building_id':active_id,
+                    'code': obj_project.code+"-"+f'{i+1:02}',
+                    'floor_analytic_account':idd.id
+                })
+                s = self.env['account.analytic.account'].search([('name','=',obj_project.code+"-"+f'{i+1:02}')])
+                s.write({
+                    'floor_id':sid.id
+                 })
+                
 
 
 # create units
@@ -77,12 +128,33 @@ class CreatUnits(models.TransientModel):
         obj_project = self.env['property.floor'].search([('id','=',active_id)])
         for i in range(no):
             if obj:
-                self.env['product.product'].create({
+                idd = self.env['account.analytic.account'].create({
+                    'name': obj_project.code+"-"+f'{len(obj.ids)+1+i:02}'
+                        
+                })
+                sid = self.env['product.product'].create({
                     'name':obj_project.code+"-"+f'{len(obj.ids)+1+i:02}',
-                    'floor_id':active_id
+                    'floor_id':active_id,
+                    'units_analytic_account':idd.id
                 })
+                s = self.env['account.analytic.account'].search([('name','=',obj_project.code+"-"+f'{len(obj.ids)+1+i:02}')])
+                s.write({
+                    'unit_id':sid.id
+                 })
+               
+                
             else:
-                self.env['product.product'].create({
-                    'name':obj_project.code+"-"+f'{i+1:02}',
-                     'floor_id':active_id
+                idd=self.env['account.analytic.account'].create({
+                    'name': obj_project.code+"-"+f'{i+1:02}'
+                        
                 })
+                sid = self.env['product.product'].create({
+                    'name':obj_project.code+"-"+f'{i+1:02}',
+                     'floor_id':active_id,
+                     'units_analytic_account':idd.id
+                })
+                s = self.env['account.analytic.account'].search([('name','=',obj_project.code+"-"+f'{i+1:02}')])
+                s.write({
+                    'unit_id':sid.id
+                 })
+                

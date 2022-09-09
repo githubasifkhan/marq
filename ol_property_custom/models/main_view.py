@@ -80,7 +80,7 @@ class OLFloor(models.Model):
     project_analytical = fields.Many2one(related="building_id.project_id.analytic_account_id", string="Project Analytic Account")
     building_analytic_account = fields.Many2one(related="building_id.building_account_analytical", string="Building Analytic Account")
     floor_analytic_account = fields.Many2one('account.analytic.account', string="Floor Account Analytical")
-
+    project_name = fields.Many2one(related="building_id.project_id", string="Project Name")
 
 class PDC(models.Model):
     _name = "post.date.checks"
@@ -105,7 +105,7 @@ class ProductInh(models.Model):
     property_price = fields.Float(string='Property Price')
     allow_discount = fields.Float(string='Allow Discount')
     reasonable_price = fields.Float(string='Reasonable Price')
-    property_owner = fields.Many2one(comodel_name='res,partner', string='Property Owner')
+    property_owner = fields.Many2one(comodel_name='res.partner', string='Property Owner')
     construction_status = fields.Char(string='Construction Status')
     floor_id = fields.Many2one('property.floor', string='Floor')
     state = fields.Selection([('new','NEW'),("reserve","RESERVE")],string="Status",default="new")
@@ -114,7 +114,7 @@ class ProductInh(models.Model):
     building_analytic_account = fields.Many2one(related="floor_id.building_id.building_account_analytical", string="Building Analytic Account")
     floor_analytic_account = fields.Many2one(related="floor_id.floor_analytic_account", string="Floor Account Analytical")
     units_analytic_account = fields.Many2one('account.analytic.account', string="Units Account Analytical")
-    # order = fields.Many2one(related='sale_order.order_line.product_id')
+    order = fields.Many2one(related='sale_order.order_line.product_id')
     def action_confirm(self):
         for rec in self:
             rec.state = "new"
@@ -138,10 +138,13 @@ class Sales_Order(models.Model):
 
                 rec.product_id.state = "reserve"
                   
-
-
-        
-
+class Analytic_Account(models.Model):
+    _inherit = "account.analytic.account"
+    project_id = fields.Many2one('project.project', string='One')
+    building_id = fields.Many2one('property.building', string='Building')
+    floor_id = fields.Many2one("property.floor" , string="Floor Analytic Account")
+    unit_id= fields.Many2one("product.product", string="Units Analytic Account")
     
-    
+
+
 
