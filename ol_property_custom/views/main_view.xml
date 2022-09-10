@@ -239,13 +239,13 @@
         <field name="model">product.product</field>
         <field name="inherit_id" ref="product.product_normal_form_view"/>
         <field name="arch" type="xml">
-            <!-- <xpath expr="//form/header" position="before">
+            <xpath expr="//form/header" position="before">
                 <header>
-                 <button name="action_confirm" type="object" string="Confirm" class="oe_highlight"/>
-                 <button name="action_reserve" type="object" string="Reserve" class="oe_highlight"/>   
-                <field name="state" widget="statusbar"  options="{'clickable':'1'}"/>
+                 <!-- <button name="action_confirm" type="object" string="Confirm" class="oe_highlight"/>
+                 <button name="action_reserve" type="object" string="Reserve" class="oe_highlight"/>    -->
+                <field name="state" widget="statusbar"/>
                 </header>    
-            </xpath>            -->
+            </xpath>           
             <xpath expr="//page[@name='general_information']" position="before">
 
                 
