@@ -17,6 +17,7 @@ class OLStartDate(models.Model):
     purchase_2_individual = fields.Many2one(comodel_name='res.partner', string='Individual')
     purchase_2_company = fields.Many2one(comodel_name='res.company', string='Company')
     location = fields.Char(string='Location')
+    location_arabic = fields.Char(string='Location Arabic')
     relevent_unit_no = fields.Many2one(comodel_name='product.product', string='Relevent Unit No')
     relevent_unit_area = fields.Char(string='Relevent Unit Area')
     relevent_bays_no = fields.Char(string='Relevent Bays No')
@@ -49,6 +50,16 @@ class ContactInheritInCompany(models.Model):
     street2_arabic=fields.Char(String="street2 (Arabic)")
     zip_arabic=fields.Char(String="Zip(Arabic)")
     city_arabic=fields.Char(String="City (Arabic)")
+    registration_no=fields.Char(String="Registration No")
     state_id_arabic = fields.Many2one(comodel_name='res.country.state', string='State')
+
+class inheritanceinbank(models.Model):
+    _inherit = 'res.bank'
+
+
+    account_no = fields.Char(String= 'Account Number')
+    account_name = fields.Char(String= 'Account Name')
+    IBAN = fields.Char(String='IBAN')
+    swift = fields.Char(String='SWIFT')
 
 
