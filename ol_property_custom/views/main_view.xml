@@ -146,6 +146,7 @@
                             <field name="name"/>
                             <field name="short_name"/>
                             <field name="code"/>
+                            <field name="project_name"/>
                             <field name="building_id"/>
                                                     
                         </group>
@@ -159,8 +160,6 @@
                 </form>
             </field>
         </record>
-
-
 
 
 
@@ -208,8 +207,24 @@
         </record>
 
 
-           
-
+               <!--crm lead inherit  -->
+                <!-- <record id="crm_lead_view_form_inherit" model="ir.ui.view">
+                    <field name="name">crm.lead.form</field>
+                    <field name="model">crm.lead</field>
+                    <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+                    <field name="arch" type="xml">
+                        <xpath expr="//page[@name='lead']" position="after">
+                            <page string="Property Information">
+                            <group>
+                            <field name="project" string = "Project"/>
+                            <field name="building" string = "Building"/>
+                            <field name="floor" string = "Floor"/>
+                            <field name="units" string = "Units"/>
+                        </group>    
+                        </page>
+                        </xpath>
+                    </field>
+                </record> -->
 
     <!-- model.name inherit form view -->
 
@@ -259,6 +274,7 @@
                         <field name="construction_status"/>
                         
                     </group>  
+                </group>
                     <group string="Analytic Account">
                         
 
@@ -270,13 +286,28 @@
                         
                     </group>  
                         
-                    </group>
+                    
                 </page>
                 
             </xpath>
             
         </field>
     </record>
+
+    <!-- analytic account inherit view -->
+            <record id="view_account_analytic_account_form_inherti" model="ir.ui.view">
+                <field name="name">account.analytic.account.inherit</field>
+                <field name="model">account.analytic.account</field>
+                <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+                <field name="arch" type="xml">
+                    <xpath expr="/form/sheet/group/group/field[@name='code']" position="after">
+                        <field name="building_id"/>
+                        <field name="floor_id"/>
+                        <field name="unit_id"/>
+                        
+                    </xpath>
+                </field>
+            </record>
 
         <menuitem id="property_menu_act" 
         name="Property" 

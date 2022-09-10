@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-# Part of Softhealer Technologies.
 {
     "name": "Property",
 
@@ -17,6 +15,7 @@
     "data": [
         'security/ir.model.access.csv',
         'wizard/create_building.xml',
+        'views/so_inherit.xml',
         'views/main_view.xml',
         
     ],
