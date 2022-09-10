@@ -134,7 +134,7 @@ class Sales_Order(models.Model):
         for rec in self:
             if rec.product_id:
                 
-                rec.product_id.sale_order = rec.order_id.ids[0]
+                # rec.product_id.sale_order = rec.order_id.ids[0]
 
                 rec.product_id.state = "reserve"
                   
