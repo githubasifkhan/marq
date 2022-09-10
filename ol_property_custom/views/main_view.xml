@@ -241,8 +241,8 @@
         <field name="arch" type="xml">
             <xpath expr="//form/header" position="before">
                 <header>
-                 <!-- <button name="action_confirm" type="object" string="Confirm" class="oe_highlight"/>
-                 <button name="action_reserve" type="object" string="Reserve" class="oe_highlight"/>    -->
+                 <button name="action_confirm" type="object" string="Confirm" class="oe_highlight"/>
+                 <button name="action_reserve" type="object" string="Reserve" class="oe_highlight"/>   
                 <field name="state" widget="statusbar"  options="{'clickable':'1'}"/>
                 </header>    
             </xpath>           
