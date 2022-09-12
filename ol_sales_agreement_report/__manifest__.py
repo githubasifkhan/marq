@@ -21,6 +21,7 @@
         'reports/sale_agrement_template.xml',
         'reports/report.xml',
         'reports/ali_sale_agreement.xml',
+        'reports/final_sale_agreement.xml',
     ],
     "images": [ ],
     "auto_install": False,
