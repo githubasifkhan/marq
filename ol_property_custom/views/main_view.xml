@@ -309,6 +309,25 @@
                 </field>
             </record>
 
+<!--         CRM inherit view -->
+        <record id="view_crm_lead_inherit_new" model="ir.ui.view">
+            <field name="name">crm.lead.inherit.new</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <field name="project_id"/>
+                    <field name="building_id"/>
+                    <field name="floor_id"/>
+                    <field name="unit_id"/>
+
+
+                </xpath>
+
+            </field>
+        </record>
+
         <menuitem id="property_menu_act" 
         name="Property" 
         action="action_building"

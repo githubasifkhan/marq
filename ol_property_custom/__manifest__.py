@@ -9,7 +9,7 @@
     "version": "15.0.1",
 
     "depends": [
-        'project','sale_management','contacts','product'
+        'project','sale_management', 'contacts', 'product', 'crm', 'ol_sales_agreement_report'
     ],
 
     "data": [

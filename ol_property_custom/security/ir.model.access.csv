@@ -6,3 +6,4 @@ access_post_date_checks,access.post.date.checks,model_post_date_checks,,1,1,1,1
 access_create_building_wizard,access.create.building.wizard,model_create_building_wizard,,1,1,1,1
 access_create_floor_wizard,access.create.floor.wizard,model_create_floor_wizard,,1,1,1,1
 access_create_units_wizard,access.create.units.wizard,model_create_units_wizard,,1,1,1,1
+access_other_purchaser_company,other_purchaser_company,model_purchaser_company,base.group_user,1,1,1,1

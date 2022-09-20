@@ -140,11 +140,21 @@ class Sales_Order(models.Model):
                   
 class Analytic_Account(models.Model):
     _inherit = "account.analytic.account"
-    project_id = fields.Many2one('project.project', string='One')
+    project_id = fields.Many2one('project.project', string='Project')
     building_id = fields.Many2one('property.building', string='Building')
     floor_id = fields.Many2one("property.floor" , string="Floor Analytic Account")
     unit_id= fields.Many2one("product.product", string="Units Analytic Account")
-    
+
+
+class Crminheritance(models.Model):
+    _inherit = "crm.lead"
+
+    project_id = fields.Many2one('project.project', string='Project')
+    building_id = fields.Many2one('property.building', string='Building')
+    floor_id = fields.Many2one("property.floor", string="Floor")
+    unit_id = fields.Many2one("product.product", string="Units")
+
+
 
 
 
