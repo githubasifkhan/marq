@@ -74,7 +74,7 @@
                                 <field name="payment" string="Payment Terms"/>
                                 <field name="payment_duration"/>
                                 <field name="start_date" placeholder="First Installment" />
-                                <field name="end_date" placeholder="Last Installment" />
+                                <field name="end_date" placeholder="Last Installment" invisible = "1" />
                                 <button name="create_invoice_installment" string="create invoice" type="object"
                         attrs="{'invisible': [('state', 'not in', ['sale'])]}"/>
 
@@ -83,6 +83,7 @@
                             <field name="down_payment"/>
                             <field name ="amount" attrs="{'invisible': [('down_payment', '=', 'percentage' )]}" />
                             <field name ="percentage" widget="percentage" attrs="{'invisible': [('down_payment', '=', 'amount' )]}"/>
+                            <field name="down_payment_amount"/>
                             <field name="installment_payable_amount"/>
                             <field name="installment_amount"/>
 
