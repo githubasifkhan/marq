@@ -67,7 +67,7 @@
                     <td style="width: 30%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><span  style="font-size:12px;padding-right:4px%;" t-field="l.purchase_individual"/> </td>
                     <td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"><strong>:المشتري 1</strong></td>
                         <td style="width: 5%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; text-align: center; font-size: 13px;"><t t-if="i==1"><strong>3 </strong></t></td>
-                            <t t-set="i" t-value="i+1"/>
+
                     </tr>
                     </tbody>
                     </table>
@@ -250,7 +250,7 @@
                       <tr>
                     <td style="width: 5%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; text-align: center; font-size: 13px;"><strong>4</strong></td>
                     <td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>Project: </strong></td>
-                    <td style="width: 60%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px;color: red; padding-left: 4px;"><span  style="font-size:12px;padding-left:4px;" t-field="s.project"/></td>
+                    <td style="width: 60%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px;color: red; padding-left: 4px;"><span  style="font-size:12px;padding-left:4px;" t-field="s.project.name"/></td>
                     <td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"><strong>:المشروع </strong></td>
                     <td style="width: 5%; border-top: 1px solid black; border-right: 1px solid black; text-align: center; font-size: 13px;"><strong>-4</strong></td>
                     </tr>
@@ -365,16 +365,375 @@
 <td style="width: 5%; border-top: 1px solid black; border-right: 1px solid black; text-align: center; font-size: 13px;"><strong>-8</strong></td>
 </tr>
 <tr>
-<td style="width: 5%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;border-bottom: 1px solid black; text-align: center; font-size: 13px;"><strong>9</strong></td>
-<td style="width: 20%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;border-bottom: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>Late Payment Fee</strong>:</td>
-<td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;border-bottom: 1px solid black; font-size: 13px; padding-left: 4px;"><span  style="font-size:12px;padding-left:4px;" t-field="s.late_payment_fee"/></td>
-<td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;border-bottom: 1px solid black; font-size: 13px; padding-left: 4px;"><span  style="font-size:12px;padding-left:4px;" t-field="s.late_payment_arabic"/></td>
-<td style="width: 20%; border-top: 1px solid black; border-right: 1px solid black; text-align: right;border-bottom: 1px solid black; font-size: 13px;"><strong>:رسم الدفعة المتأخرة</strong></td>
-<td style="width: 5%; border-top: 1px solid black; border-right: 1px solid black; text-align: center;border-bottom: 1px solid black; font-size: 13px;"><strong>-9</strong></td>
+<td style="width: 5%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; text-align: center; font-size: 13px;"><strong>9</strong></td>
+<td style="width: 20%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>Late Payment Fee</strong>:</td>
+<td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><span  style="font-size:12px;padding-left:4px;" t-field="s.late_payment_fee"/></td>
+<td style="width: 25%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><span  style="font-size:12px;padding-left:4px;" t-field="s.late_payment_arabic"/></td>
+<td style="width: 20%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"><strong>:رسم الدفعة المتأخرة</strong></td>
+<td style="width: 5%; border-top: 1px solid black; border-right: 1px solid black; text-align: center; font-size: 13px;"><strong>-9</strong></td>
 </tr>
 
 </tbody>
 </table>
+                    <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>THIS AGREEMENT</strong> shall be effective as of the Effective Date between the Developer named at Item 2 of the Particulars and the Purchaser named at Item 3 of the Particulars.</td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"><strong>تكون</strong> هذه الاتفاقية<strong> نافذة اعتباراً من تاريخ النفاذ بين </strong>المطور المشار إليه في البند 2 من قسم التفاصيل، والمشتري المشار إليه في البند 3 من قسم التفاصيل؛</td>
+</tr>
+</tbody>
+</table>
+<table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><![CDATA[&nbsp;]]></td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"><![CDATA[&nbsp;]]> </td>
+</tr>
+</tbody>
+</table>
+<table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>RECITALS:</strong></td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"><strong>الحيثيات:</strong></td>
+</tr>
+</tbody>
+</table>
+<table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"> <![CDATA[&nbsp;]]></td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"> <![CDATA[&nbsp;]]></td>
+</tr>
+</tbody>
+</table>
+ <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;">A.	The Landowner is the owner of the Plot and has appointed the Developer as the RERA approved developer of the Project.</td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;">أ-	المطور الرئيسي مسؤول عن تطوير المجمع الرئيسي ومالك لقطعة الأرض وقام بتعيين المطور كمطور معتمد من قبل ومسجل لدى مؤسسة التنظيم العقاري بخصوص المشروع. </td>
+</tr>
+</tbody>
+</table>
+<table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"> <![CDATA[&nbsp;]]></td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"> <![CDATA[&nbsp;]]></td>
+</tr>
+</tbody>
+</table>
+ <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;">B.		The Purchaser has agreed to purchase the Property, located within the Project.</td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;">ب-	وافق المشتري على شراء العقار الواقع ضمن المشروع.  </td>
+</tr>
+</tbody>
+</table>
+<table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"> <![CDATA[&nbsp;]]></td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"> <![CDATA[&nbsp;]]></td>
+</tr>
+</tbody>
+</table>
+ <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;">B.		The Purchaser has agreed to purchase the Property, located within the Project.</td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;">ب-	وافق المشتري على شراء العقار الواقع ضمن المشروع.  </td>
+</tr>
+</tbody>
+</table>
+<table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"> <![CDATA[&nbsp;]]></td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"> <![CDATA[&nbsp;]]></td>
+</tr>
+</tbody>
+</table>
+ <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;">C.		The Developer has agreed to procure the sale of the Property to the Purchaser, upon the terms of this Agreement. </td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;">ج- 	وافق المطور على ترتيب بيع العقار للمشتري بموجب أحكام هذه الاتفاقية.  </td>
+</tr>
+</tbody>
+</table>
+  <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"> <![CDATA[&nbsp;]]></td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"> <![CDATA[&nbsp;]]></td>
+</tr>
+</tbody>
+</table>
+                    <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"> <![CDATA[&nbsp;]]></td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"> <![CDATA[&nbsp;]]></td>
+</tr>
+</tbody>
+</table>
+ <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>IN WITNESS WHEREOF </strong> the Parties have executed this Agreement on the dates set forth below, to be effective as of the Effective Date. </td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"> وقع الطرفان هذه الاتفاقية بالتواريخ المبينة أدناه وتكون الاتفاقية نافذة اعتباراً من تاريخ النفاذ.<strong>إشهاداً على ذلك</strong> </td>
+</tr>
+</tbody>
+</table>
+                      <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"> <![CDATA[&nbsp;]]></td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"> <![CDATA[&nbsp;]]></td>
+</tr>
+</tbody>
+</table>
+                    <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;">The Purchaser hereby confirms to have read and understood the terms of this Agreement, comprising: (i) these Particulars; (ii) the Payment Schedule (Schedule A); (c) the Terms  &amp; Conditions (Schedule B); (iii) the Relevant Unit Plan (Draft) and Relevant Unit Specifications (Schedule C) and (iv) Jointly Owned Property Declaration (Acknowledgment) (Schedule D), and (v) Deed of Adherence (Schedule E), and hereby agrees and undertakes to be bound by them:   </td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"> يؤكد المشتري أنه قرأ وفهم أحكام هذه الاتفاقية بما في ذلك: (1) هذه التفاصيل؛ (2) جدول الدفع (الجدول آ)؛ (2) الشروط والأحكام (الجدول ب)؛ (3) مخطط الوحدة المعنية (المسودة) ومواصفات الوحدة المعنية (الجدول ج) و(4) إعلان نظام الملكية المشتركة (الإقرار) (الجدول د)؛ (5) سند الالتزام (الجدول هــ)؛ ويوافق على ويتعهد بالالتزام بها: </td>
+</tr>
+</tbody>
+</table>
+                      <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"> <![CDATA[&nbsp;]]></td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"> <![CDATA[&nbsp;]]></td>
+</tr>
+</tbody>
+</table>
+                      <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;">SIGNED BY: [<span  style="font-size:12px;padding-left:4px;" t-field="s.signed_by"/> ] Duly authorised for and on behalf of the Developer MARQUIS CIRCLE REAL ESTATE DEVELOPER LLC </td>
+    <td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"> <strong><span  style="font-size:12px;padding-left:4px;" t-field="s.signed_by"/> <strong> : وقعها </strong> <br/> المفوض أصولاً عن وبالنيابة عن المطور ماركيز بوينت للعقارات ش.ذ.م.م </strong> </td>
+</tr>
+</tbody>
+</table>
+                    <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>Date:</strong><span  style="font-size:12px;padding-left:4px;" t-field="s.date_order"/></td>
+    <td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"> <strong>التاريخ: </strong><span  style="font-size:12px;padding-left:4px;" t-field="s.date_order"/> </td>
+</tr>
+</tbody>
+</table>
+                    <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"> <![CDATA[&nbsp;]]></td>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"> <![CDATA[&nbsp;]]></td>
+</tr>
+</tbody>
+</table>
+                        <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;">SIGNED BY: [<span  style="font-size:12px;padding-left:4px;" t-field="s.signed_by"/>]  <br/> Duly authorised for and on behalf of the Developer MARQUIS CIRCLE REAL ESTATE DEVELOPER LLC </td>
+    <td style="width: 50%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;">  <span  style="font-size:12px;padding-left:4px;" t-field="s.signed_by"/> <strong> : وقعها </strong> <br/> المفوض أصولاً عن وبالنيابة عن المشتري</td>
+</tr>
+</tbody>
+</table>
+                    <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 50%; border-top: 1px solid black; border-bottom: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>Date:</strong><span  style="font-size:12px;padding-left:4px;" t-field="s.date_order"/></td>
+    <td style="width: 50%; border-top: 1px solid black;border-bottom: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"> <strong>التاريخ: </strong><span  style="font-size:12px;padding-left:4px;" t-field="s.date_order"/> </td>
+</tr>
+</tbody>
+</table>
+                    <table style="border:none;  width:100%; ">
+                    <tr style="text-align:center">
+                        <td style="width:50% text-align:center">
+                            <span style="font-size: 14px; font-weight: bold; text-align: left;">
+                                SCHEDULE A
+                            </span>
+                        </td>
+
+                        <td style="width:50% text-align:left">
+                            <span style="font-size: 14px; font-weight: bold; text-align: right;">
+                                الجدول آ
+                            </span>
+                        </td>
+
+                    </tr>
+                    <tr style="text-align:center">
+                        <td style="width:50% text-align:center">
+                            <span style="font-size: 14px; font-weight: bold; text-align: left;">
+                            PAYMENT SCHEDULE
+                        </span>
+                        </td>
+
+                        <td style="width:50%">
+                            <span style="font-size: 14px; font-weight: bold; text-align: right;">
+                               جدول الدفع
+                            </span>
+                        </td>
+                    </tr>
+
+                </table>
+                    <br/>
+                      <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+                    <tbody>
+                    <tr>
+                        <td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; text-align: center; font-size: 13px;"><strong>Instalment </strong></td>
+
+                    <td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>Purchase Price (%) </strong></td>
+                    <td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>Construction Milestone</strong> </td>
+                    <td style="width: 45%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>Anticipated Instalment Date(s)</strong> </td>
+                    <td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"><strong>Instalment Amounts</strong></td>
+
+               </tr>
+                    </tbody>
+                    </table>
+                     <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+                    <tbody>
+                    <tr>
+                        <td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; text-align: center; font-size: 13px;"><strong>القسط </strong></td>
+
+                    <td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>سعر الشراء</strong></td>
+                    <td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>مرحلة الإنجاز</strong> </td>
+                    <td style="width: 45%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>تاريخ القسط المتوقع</strong> </td>
+                    <td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;"><strong>قيمة القسط</strong></td>
+
+               </tr>
+                    </tbody>
+                    </table>
+
+  <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+                    <tbody>
+                    <tr>
+                        <td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; text-align: center; font-size: 13px;">1</td>
+
+                    <td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>[Insert]%</strong></td>
+                    <td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>[Insert]%</strong> </td>
+                    <td style="width: 22.5%; border-top: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;">On or before the effective date of the Reservation Form  </td>
+                      <td style="width: 22.5%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;">عند أو قبل تاريخ توقيع استمارة الحجز </td>
+                    <td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;">AED[Insert]></td>
+
+               </tr>
+                    </tbody>
+                    </table>
+                    <table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; text-align: center; font-size: 13px;">2</td>
+<td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>[Insert]%</strong></td>
+<td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>[Insert]%</strong></td>
+<td style="width: 22.5%; border-top: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;">On or before the Effective Date of this Agreement</td>
+<td style="width: 22.5%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;">عند أو قبل تاريخ نفاذ هذه الاتفاقية</td>
+<td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;">AED[Insert]</td>
+</tr>
+</tbody>
+</table>
+<table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; text-align: center; font-size: 13px;">3</td>
+<td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>[Insert]%</strong></td>
+<td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>[Insert]%</strong></td>
+<td style="width: 22.5%; border-top: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>[Insert]%</strong></td>
+<td style="width: 22.5%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><![CDATA[&nbsp;]]></td>
+<td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;">AED[Insert]</td>
+</tr>
+</tbody>
+</table>
+<table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; text-align: center; font-size: 13px;">
+<p>Final Instalment</p>
+</td>
+<td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>[Insert]%</strong></td>
+<td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><strong>100%</strong></td>
+<td style="width: 22.5%; border-top: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;">Completion Date</td>
+<td style="width: 22.5%; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;">تاريخ الإنجاز</td>
+<td style="width: 15%; border-top: 1px solid black; border-right: 1px solid black; text-align: right; font-size: 13px;">AED[Insert]</td>
+</tr>
+</tbody>
+</table>
+<table style="border-right: 1px solid black; border-left: 1px solid black; width: 100%; font-size: 10px;">
+<tbody>
+<tr>
+<td style="width: 15%;  border-right: 1px solid black;border-bottom: 1px solid black; border-left: 1px solid black; text-align: center; font-size: 13px;border-top: 1px solid black;">لقسط الأخير</td>
+<td style="width: 15%;  border-right: 1px solid black;border-bottom: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><![CDATA[&nbsp;]]></td>
+<td style="width: 15%;  border-right: 1px solid black;border-bottom: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><![CDATA[&nbsp;]]></td>
+<td style="width: 22.5%;  border-left: 1px solid black;border-bottom: 1px solid black; font-size: 13px; padding-left: 4px;"><![CDATA[&nbsp;]]></td>
+<td style="width: 22.5%;  border-right: 1px solid black;border-bottom: 1px solid black; border-left: 1px solid black; font-size: 13px; padding-left: 4px;"><![CDATA[&nbsp;]]></td>
+<td style="width: 15%;  border-right: 1px solid black;border-bottom: 1px solid black; text-align: right; font-size: 13px;"><![CDATA[&nbsp;]]></td>
+</tr>
+</tbody>
+</table>
+                    <br/>
+<table style="height: 16px;" width="100%">
+<tbody>
+<tr>
+<td style="width:50%; font-size: 13px;">Notes</td>
+<td style="width: 50%;  text-align: right; font-size: 13px;"><strong>: ملاحظات</strong></td>
+</tr>
+</tbody>
+</table>
+                    <table style="height: 16px;" width="100%">
+<tbody>
+<tr>
+<td style="width:50%; font-size: 13px;">Instalment 3 is linked to a Construction Milestone in that the payment date shall be on the later of the date set out in the Payment Schedule or ten (10) Working Days from the date the Project Manager confirms that the Project is [Insert] per cent ([Insert]%) complete.</td>
+<td style="width: 50%;  text-align: right; font-size: 13px;">إن القسط 3 مرتبط بمرحلة إنشاء حيث أن تاريخ الدفع يجب ألا يتجاوز التاريخ المبين في جدول الدفع أو 10 أيام عمل من تاريخ تأكيد مدير المشروع إنجاز بالمئة ([●]%) من المشروع أيهما أبعد. ></td>
+</tr>
+</tbody>
+</table>
+                    <br/>
+                    <table style="height: 16px;" width="100%">
+<tbody>
+<tr>
+<td style="width:50%; font-size: 13px;">The Final Instalment is linked to the Completion Date.</td>
+<td style="width: 50%;  text-align: right; font-size: 13px;">إن القسط النهائي مرتبط بتاريخ الإنجاز.</td>
+</tr>
+</tbody>
+</table>
+ <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+ <table style="border:none;  width:100%; ">
+                    <tr style="text-align:center">
+                        <td style="width:50% text-align:center">
+                            <span style="font-size: 14px; font-weight: bold; text-align: left;">
+                                SCHEDULE B
+                            </span>
+                        </td>
+
+                        <td style="width:50% text-align:left">
+                            <span style="font-size: 14px; font-weight: bold; text-align: right;">
+                                الجدول ب
+                            </span>
+                        </td>
+
+                    </tr>
+                    <tr style="text-align:center">
+                        <td style="width:50% text-align:center">
+                            <span style="font-size: 14px; font-weight: bold; text-align: left;">
+                            TERMS &amp; CONDITIONS
+                        </span>
+                        </td>
+
+                        <td style="width:50%">
+                            <span style="font-size: 14px; font-weight: bold; text-align: right;">
+                               الشروط والأحكام
+                            </span>
+                        </td>
+                    </tr>
+
+                </table>
+
+
+
+
 
 
 
